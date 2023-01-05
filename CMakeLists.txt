@@ -372,7 +372,7 @@ if (NOT DEFINED INSTALL_DIR_CMAKE)
       set (INSTALL_DIR_CMAKE "lib/cmake/opencascade" CACHE PATH "${INSTALL_DIR_CMAKE_DESCR}")
     endif()
   else()
-    set (INSTALL_DIR_CMAKE "cmake" CACHE PATH "${INSTALL_DIR_CMAKE_DESCR}")
+    set (INSTALL_DIR_CMAKE "${OS_WITH_BIT}/${COMPILER}/cmake" CACHE PATH "${INSTALL_DIR_CMAKE_DESCR}")
   endif()
 endif()
 

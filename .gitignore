@@ -52,4 +52,4 @@ win64
 /libtool
 /stamp*
 /build*
-/install
+/install*
