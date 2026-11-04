@@ -35,7 +35,9 @@
   #include <XDEDRAW.hxx>
   #include <XSDRAW.hxx>
   #include <XSDRAWDE.hxx>
-  #include <XSDRAWGLTF.hxx>
+  #ifdef HAVE_RAPIDJSON
+    #include <XSDRAWGLTF.hxx>
+  #endif
   #include <XSDRAWIGES.hxx>
   #include <XSDRAWOBJ.hxx>
   #include <XSDRAWPLY.hxx>
@@ -200,7 +202,9 @@ static int Pload(Draw_Interpretor& theDI, int theNbArgs, const char** theArgVec)
     {"STEP", XSDRAWSTEP::Factory},
     {"IGES", XSDRAWIGES::Factory},
     {"PLY", XSDRAWPLY::Factory},
+  #ifdef HAVE_RAPIDJSON
     {"GLTF", XSDRAWGLTF::Factory},
+  #endif
     {"VRML", XSDRAWVRML::Factory},
     {"STL", XSDRAWSTL::Factory},
     {"OBJ", XSDRAWOBJ::Factory},
