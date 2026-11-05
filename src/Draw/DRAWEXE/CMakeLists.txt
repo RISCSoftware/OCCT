@@ -32,6 +32,12 @@ OCCT_INCLUDE_CMAKE_FILE (adm/cmake/occt_toolkit)
 unset (EXECUTABLE_PROJECT)
 unset (CUSTOM_EXTERNLIB)
 
+if(WIN32 AND USE_TK AND NOT BUILD_SHARED_LIBS)
+  target_sources(DRAWEXE PRIVATE tk_base.rc)
+  source_group("Resource Files\\DRAWEXE" FILES "tk_base.rc")
+endif()
+
+
 if (EMSCRIPTEN)
   # Look for Tcl version string from file tcl.h
   set (TCL_MAJOR_VERSION  8)
